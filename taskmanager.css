@@ -5,6 +5,110 @@ TODO:
 */
 
 
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+
+/****** Grid Styles ******/
+
+body {
+    display: grid;
+    grid-template-columns: [header-right] 22% [main-left] 2em [main-right] 1fr;
+    grid-template-rows: [row-1] auto [row-2] 2em [row-3] 50px;
+    grid-template-areas:
+    "header . main"
+    "header . ."
+    "header . footer";
+}
+
+main {
+    grid-area: main;
+
+    display: grid;
+    grid-template-columns: [list1-start] 1fr [list1-end] 1em [list2-start] 1fr [list2-end] 1em [list3-start] 1fr [main-end] 2em;
+    grid-template-rows: [upper-start] 2em [upper-end] 1fr [lower-start] 1em [lower-end] 0.5fr; 
+    grid-template-areas: 
+    ". . . . . ."
+    "list1 . list2 . list3 ."
+    ". . . . . ."
+    "list4 list4 list4 list4 list4 .";
+}
+
+header {
+    grid-area: header;
+
+    display: grid;
+    grid-template-columns: [header-right] 100%;
+    grid-template-rows: [row-1] 405px [row-2] 100px [row-3] auto [row-4] auto;
+    grid-template-areas: 
+    "avatar"
+    "stats"
+    "."
+    "nav";
+}
+
+#avatar {
+    grid-area: avatar;
+    max-height: 400px; /* TODO: adjust later */
+}
+
+#stats {
+    grid-area: stats;
+}
+
+nav {
+    grid-area: nav;
+}
+
+footer {
+    grid-area: footer;
+}
+
+#list-1 {
+    grid-area: list1;
+}
+
+#list-2 {
+    grid-area: list2;
+}
+
+#list-3 {
+    grid-area: list3;
+}
+
+#list-4 {
+    grid-area: list4;
+}
+
+/****** Nav Styles ******/
+
+nav {
+    width: 100%;
+    border: 2px solid blue;
+}
+
+nav ul {
+    width: 100%;
+    list-style-type: none;
+}
+
+nav ul li {
+    width: 100%;
+    margin: 2.5em auto;
+}
+
+nav ul li a {
+    width: 100%;
+    padding: 1em;
+    background-color: aquamarine;
+    border-radius: 25px;
+}
+
 
 
 /****** Flex Classes ******/
