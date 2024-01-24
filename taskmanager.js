@@ -22,3 +22,6 @@ Later TODO:
 - stat counter
 
 */
+
+
+import Sortable from 'Sortable-master/sortablejs';
