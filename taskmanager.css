@@ -13,17 +13,77 @@ body {
     min-height: 100%;
 }
 
+ul {
+    padding: 0;
+}
+
+
+/****** Nav Styles ******/
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    width: 100%;
+    list-style-type: none;
+}
+
+nav ul li {
+    width: 100%;
+    margin: 2.5em auto;
+}
+
+nav ul li a {
+    width: 100%;
+    padding: 1em;
+    background-color: aquamarine;
+    border-radius: 25px;
+}
+
+
+/****** List styles ******/
+.task-list h2 {
+    text-align: center;
+    margin-top: 0;
+    background-color: rgb(149, 225, 200);
+    border-radius: 20px 20px 0 0;
+    padding: 0.5em 0;
+    border-bottom: 1px solid black;
+}
+
+.task-list {
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.task-list ul {
+    list-style-type: none;
+    padding: 0 0.5em;
+}
+
+.task-list ul li {
+    border-radius: 10px;
+    text-align: center;
+    padding: 1em;
+    border: 2px solid black;
+}
+
+
+
 
 /****** Grid Styles ******/
 
 body {
     display: grid;
     grid-template-columns: [header-right] 22% [main-left] 2em [main-right] 1fr;
-    grid-template-rows: [row-1] auto [row-2] 2em [row-3] 50px;
+    grid-template-rows: [row-1] 2em [row-2] auto [row-3] 50px [row-4] 2em;
     grid-template-areas:
+    ". . ."
     "header . main"
-    "header . ."
-    "header . footer";
+    "footer . main"
+    ". . .";
+
 }
 
 main {
@@ -31,9 +91,8 @@ main {
 
     display: grid;
     grid-template-columns: [list1-start] 1fr [list1-end] 1em [list2-start] 1fr [list2-end] 1em [list3-start] 1fr [main-end] 2em;
-    grid-template-rows: [upper-start] 2em [upper-end] 1fr [lower-start] 1em [lower-end] 0.5fr; 
+    grid-template-rows: [upper-end] 1fr [lower-start] 1em [lower-end] 0.5fr; 
     grid-template-areas: 
-    ". . . . . ."
     "list1 . list2 . list3 ."
     ". . . . . ."
     "list4 list4 list4 list4 list4 .";
@@ -84,31 +143,6 @@ footer {
 #list-4 {
     grid-area: list4;
 }
-
-/****** Nav Styles ******/
-
-nav {
-    width: 100%;
-    border: 2px solid blue;
-}
-
-nav ul {
-    width: 100%;
-    list-style-type: none;
-}
-
-nav ul li {
-    width: 100%;
-    margin: 2.5em auto;
-}
-
-nav ul li a {
-    width: 100%;
-    padding: 1em;
-    background-color: aquamarine;
-    border-radius: 25px;
-}
-
 
 
 /****** Flex Classes ******/
