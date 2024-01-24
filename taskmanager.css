@@ -34,6 +34,23 @@ footer {
     padding: 1em;
 }
 
+/****** Money & XP styles ******/
+
+#xp-bar {
+    height: 1em;
+    border-radius: 20px;
+
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+#clip-icon {
+    max-height: 30px;
+}
+
+
 /****** Nav Styles ******/
 
 nav {
@@ -60,6 +77,7 @@ nav ul li a {
     border-radius: 50px;
     display: block;
     font-size: 22px;
+    font-weight: bold;
 }
 
 
@@ -108,7 +126,7 @@ nav ul li a {
 body {
     display: grid;
     grid-template-columns: [header-right] 0.3fr [main-left] 2em [main] 1fr;
-    grid-template-rows: [row-1] auto [row-2] 50px;
+    grid-template-rows: [row-1] auto [row-2] 100px;
     grid-template-areas:
     "header . main"
     "footer . main";
@@ -118,12 +136,14 @@ main {
     grid-area: main;
 
     display: grid;
-    grid-template-columns: [list1-start] 1fr [list1-end] 1em [list2-start] 1fr [list2-end] 1em [list3-start] 1fr;
-    grid-template-rows: [upper-end] 1fr [lower-start] 1em [lower-end] 0.5fr; 
+    grid-template-columns: [list1-start] 1fr [list1-end] 1em [list2-start] 1fr [list2-end] 1em [list3-start] 1fr [list3-end] 2em;
+    grid-template-rows: [upper-start] 2em [upper-end] 1fr [lower-start] 1em [lower-end] 0.5fr [lists-end] 2em; 
     grid-template-areas: 
+    ". . . . . ."
     "list1 . list2 . list3 ."
     ". . . . . ."
-    "list4 list4 list4 list4 list4 .";
+    "list4 list4 list4 list4 list4 ."
+    ". . . . . .";
 }
 
 header {
@@ -139,13 +159,35 @@ header {
     ". nav .";
 }
 
+#stats {
+    grid-area: stats;
+
+    display: grid;
+    grid-template-columns: [stats-left] 2em [stats-mid] 0.5fr [stats-mid2] 1em [stats-mid3] 1fr [stats-right] 2em;
+    grid-template-rows: [stats-top] 1fr [stats-bottom] 1fr;
+    grid-template-areas: 
+    ". clips . level ."
+    ". clips . xp .";
+}
+
+#xp {
+    grid-area: xp;
+    align-self: start;
+}
+
+#clips {
+    grid-area: clips;
+    align-self: center;
+}
+
+#level {
+    grid-area: level;
+    align-self: end;
+}
+
 #avatar {
     grid-area: avatar;
     max-height: 400px; /* TODO: adjust later */
-}
-
-#stats {
-    grid-area: stats;
 }
 
 nav {
