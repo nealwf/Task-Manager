@@ -43,13 +43,16 @@ nav ul li a {
 
 
 /****** List styles ******/
-.task-list h2 {
-    text-align: center;
-    margin-top: 0;
+.task-list-header {
     background-color: rgb(149, 225, 200);
     border-radius: 20px 20px 0 0;
     padding: 0.5em 0;
     border-bottom: 1px solid black;
+}
+
+.task-list h2 {
+    text-align: center;
+    margin: 0;
 }
 
 .task-list {
@@ -69,7 +72,15 @@ nav ul li a {
     border: 2px solid black;
 }
 
+.add-task-button {
+    margin-left: 0.75em;
+    border-radius: 25px;
+    border: 2px solid black;
+}
 
+.add-task-button:hover {
+    cursor: pointer;
+}
 
 /****** Grid Styles ******/
 
