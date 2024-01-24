@@ -1,5 +1,5 @@
-const { app, BrowserWindow } = require("electron");
-const path = require("node:path");
+const { app, BrowserWindow, ipcMain } = require('electron')
+const path = require("node:path")
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -9,19 +9,20 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
-  });
+  })
 
-  win.loadFile("tasks.html");
-};
+  win.loadFile("tasks.html")
+}
 
 app.whenReady().then(() => {
-  createWindow();
+  ipcMain.handle('ping', () => 'pong')
+  createWindow()
 
   app.on("activate", () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow();
-  });
-});
+    if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  })
+})
 
 app.on("window-all-closed", () => {
-  if (process.platform !== "darwin") app.quit();
-});
+  if (process.platform !== "darwin") app.quit()
+})
