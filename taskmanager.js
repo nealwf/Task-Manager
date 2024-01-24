@@ -22,9 +22,13 @@ Later TODO:
 - stat counter
 
 */
+import Sortable from /Sortable-master/sortablejs;
 
+window.onload = (event) => {
+  var firstList = document.getElementById("first-list");
+  Sortable.create(firstList, {
+    group: "sorting",
+    sort: true,
+  });
+};
 
-import Sortable from 'Sortable-master/sortablejs';
-
-var firstList = document.getElementById('first-list');
-var firstList = Sortable.create(firstList);
