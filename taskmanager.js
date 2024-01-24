@@ -25,3 +25,6 @@ Later TODO:
 
 
 import Sortable from 'Sortable-master/sortablejs';
+
+var firstList = document.getElementById('first-list');
+var firstList = Sortable.create(firstList);
