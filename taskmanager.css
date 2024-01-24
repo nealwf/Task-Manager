@@ -50,6 +50,11 @@ footer {
     max-height: 30px;
 }
 
+#clips {
+    background-color: white;
+    border-radius: 15px;
+}
+
 
 /****** Nav Styles ******/
 
