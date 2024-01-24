@@ -11,5 +11,8 @@
     "url": "Task-Manager"
   },
   "author": "Neal Whitefur",
-  "license": "GPL-3.0-or-later"
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "electron": "^28.2.0"
+  }
 }
