@@ -22,7 +22,7 @@ Later TODO:
 - stat counter
 
 */
-import Sortable from /Sortable-master/sortablejs;
+/*import Sortable from /Sortable-master/sortablejs;
 
 window.onload = (event) => {
   var firstList = document.getElementById("first-list");
@@ -31,4 +31,4 @@ window.onload = (event) => {
     sort: true,
   });
 };
-
+*/

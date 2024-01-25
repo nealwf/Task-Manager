@@ -14,6 +14,10 @@
   "author": "Neal Whitefur",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
+    "@electron/rebuild": "^3.6.0",
     "electron": "^28.2.0"
+  },
+  "dependencies": {
+    "sortablejs": "^1.15.2"
   }
 }
