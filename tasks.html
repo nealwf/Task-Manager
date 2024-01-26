@@ -5,11 +5,52 @@
     <link href="taskmanager.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript">
 
+        function addTask(type) {
+            console.log('added!');
+            console.log(type);
+            var dialog;
+ 
+ 
+ 
+             if (type === 'pertinent') {
+                 dialog = document.querySelector("#list-1 dialog");
+                 dialog.showModal();
+ 
+             } else if (type === 'predictable') {
+ 
+             } else if (type === 'todo') {
+             } else if (type === 'forget') {
+             }
+
+
+        }
+
+        const doOnClick = (e) => {
+            console.log('eh')
+        }
+
+
+        window.onload = (event) => {
+            var addButtons = document.querySelectorAll('.add-task-button');
+
+
+
+            addButtons.forEach((button) => {
+                button.addEventListener('click', function (event) {
+                    addTask(this.id);
+                })
+            });
+        }
+
+        //dialog.showModal();
+
         function increment(element) {
             var value = element.innerHTML;
             value++;
             element.innerHTML = value;
         }
+
+
 
     </script>
 
@@ -42,17 +83,24 @@
         <div id="list-1" class="task-list">
             <div class="task-list-header flex-center">
                 <h2>Pertinents</h2>
-                <button class="add-task-button" onclick="addTask()">+</button>
+                <button id="pertinent" class="add-task-button" type="button">+</button>
             </div>
             <ul id="first-list">
                 <li><button onclick="increment(this)">2</button><span class="task-title">task 1</span><span class="difficulty">★</span></li>
                 <li><button onclick="increment(this)">0</button><span class="task-title">task 2</span><span class="difficulty flex-right">★★★</span></li>
             </ul>
+            <dialog>
+                <p>Add a task</p>
+                <form>
+                    <label>Title: <input type="text" placeholder="New task" /></label>
+                    <button type="submit">Add task</button>
+                </form>
+            </dialog>
         </div>
         <div id="list-2" class="task-list">
             <div class="task-list-header flex-center">
                 <h2>Predictables</h2>
-                <button class="add-task-button" onclick="addTask()">+</button>
+                <button id="predictable" class="add-task-button" type="button">+</button>
             </div>
             <ul>
                 <li>task</li>
@@ -62,7 +110,7 @@
         <div id="list-3" class="task-list">
             <div class="task-list-header flex-center">
                 <h2>To Do</h2>
-                <button class="add-task-button" onclick="addTask()">+</button>
+                <button id="todo" class="add-task-button" type="button">+</button>
             </div>
             <ul>
                 <li>task</li>
@@ -72,7 +120,7 @@
         <div id="list-4" class="task-list">
             <div class="task-list-header flex-center">
                 <h2>Don't Forget</h2>
-                <button class="add-task-button" onclick="addTask()">+</button>
+                <button id="forget" class="add-task-button" type="button">+</button>
             </div>
             <ul>
                 <li>task</li>
@@ -85,6 +133,6 @@
         <p id="info"></p>
     </footer>
 </body>
-<script src="./renderer.js"></script>
+
 
 </html>
