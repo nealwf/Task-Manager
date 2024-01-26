@@ -53,6 +53,7 @@ footer {
 #clips {
     background-color: white;
     border-radius: 15px;
+    color: black;
 }
 
 
@@ -70,12 +71,12 @@ nav ul {
 
 nav ul li {
     width: 100%;
-    margin: 1em auto 0;
+    margin: 0.5em auto 0;
 }
 
 nav ul li a {
-    width: calc(100% - 2em - 2px);
-    padding: 0.75em;
+    width: calc(100% - 1.2em - 2px);
+    padding: 0.6em;
     background-color: aquamarine;
     border: 1px solid darkcyan;
     text-align: center;
@@ -83,6 +84,13 @@ nav ul li a {
     display: block;
     font-size: 22px;
     font-weight: bold;
+    text-decoration: none;
+    color: #663399;
+}
+
+nav ul li a:hover {
+    background-color: darkcyan;
+    color: white;
 }
 
 
@@ -112,8 +120,35 @@ nav ul li a {
 .task-list ul li {
     border-radius: 10px;
     text-align: center;
-    padding: 1em;
+    padding: 0.5em 1em;
     border: 2px solid black;
+
+    display: grid;
+    grid-template-columns: 2em 1fr 50px;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "check title difficulty";
+}
+
+.task-title {
+    grid-area: title;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+}
+
+.per-period {
+    grid-area: period;
+    justify-self: end;
+}
+
+.task-list ul li button {
+    grid-area: check;
+}
+
+.difficulty {
+    grid-area: difficulty;
+justify-self: end;
 }
 
 .add-task-button {

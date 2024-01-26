@@ -3,7 +3,15 @@
 
 <head>
     <link href="taskmanager.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
 
+        function increment(element) {
+            var value = element.innerHTML;
+            value++;
+            element.innerHTML = value;
+        }
+
+    </script>
 
     <title>Task Manager</title>
 </head>
@@ -13,7 +21,9 @@
         <img src="placeholder.png" id="avatar" />
         <div id="stats">
             <p id="level">Level 2</p>
-            <span id="clips"><img alt="clip" src="clip.png" id="clip-icon"/><p>100</p></span>
+            <span id="clips"><img alt="clip" src="clip.png" id="clip-icon" />
+                <p>100</p>
+            </span>
             <label id="xp">
                 XP <progress id="xp-bar" max="100" value="20"></progress>
             </label>
@@ -21,6 +31,7 @@
         <nav>
             <ul>
                 <li><a href="tasks.html">Tasks</a></li>
+                <li><a href="projects.html">Projects</a></li>
                 <li><a href="wardrobe.html">Wardrobe</a></li>
                 <li><a href="shops.html">Shops</a></li>
                 <li><a href="stats.html">Stats</a></li>
@@ -30,17 +41,17 @@
     <main>
         <div id="list-1" class="task-list">
             <div class="task-list-header flex-center">
-                <h2>List 1</h2>
+                <h2>Pertinents</h2>
                 <button class="add-task-button" onclick="addTask()">+</button>
             </div>
             <ul id="first-list">
-                <li>task 1</li>
-                <li>task 2</li>
+                <li><button onclick="increment(this)">2</button><span class="task-title">task 1</span><span class="difficulty">★</span></li>
+                <li><button onclick="increment(this)">0</button><span class="task-title">task 2</span><span class="difficulty flex-right">★★★</span></li>
             </ul>
         </div>
         <div id="list-2" class="task-list">
             <div class="task-list-header flex-center">
-                <h2>List 2</h2>
+                <h2>Predictables</h2>
                 <button class="add-task-button" onclick="addTask()">+</button>
             </div>
             <ul>
@@ -50,7 +61,7 @@
         </div>
         <div id="list-3" class="task-list">
             <div class="task-list-header flex-center">
-                <h2>List 3</h2>
+                <h2>To Do</h2>
                 <button class="add-task-button" onclick="addTask()">+</button>
             </div>
             <ul>
@@ -69,7 +80,11 @@
             </ul>
         </div>
     </main>
-    <footer><p>A project by Neal Whitefur &bull; [license] &bull; Help</p><p id="info"></p></footer>
+    <footer>
+        <p>A project by Neal Whitefur &bull; [license] &bull; Help</p>
+        <p id="info"></p>
+    </footer>
 </body>
 <script src="./renderer.js"></script>
+
 </html>
