@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow, ipcMain, Sortable } = require('electron')
 const path = require("node:path")
 
 const createWindow = () => {
@@ -8,6 +8,7 @@ const createWindow = () => {
     useContentSize: true,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
+      nodeIntegration: true
     },
   })
 
