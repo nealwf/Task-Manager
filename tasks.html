@@ -8,29 +8,73 @@
         function addTask(type) {
             console.log('added!');
             console.log(type);
-            var dialog;
- 
- 
- 
-             if (type === 'pertinent') {
-                 dialog = document.querySelector("#list-1 dialog");
-                 dialog.showModal();
- 
-             } else if (type === 'predictable') {
- 
-             } else if (type === 'todo') {
-             } else if (type === 'forget') {
-             }
+
+            var dialog = document.querySelector("dialog");
+            var title = dialog.querySelector("#title-input");
+            var diff = dialog.querySelector('input[name="difficulty"]');
+            var btn = dialog.querySelector("button");
+
+            diff.addEventListener("change", (e) => {
+                btn.value += "d:" + diff.value + ",";
+            });
+
+            title.addEventListener("change", (e) => {
+                btn.value += "t:" + title.value + ",";
+            });
+
+            btn.addEventListener("click", (event) => {
+                event.preventDefault(); // We don't want to submit this fake form
+                dialog.close(btn.value); // Have to send the select box value here.
+            });
+
+            dialog.addEventListener("close", (e) => {
+
+                var values = dialog.returnValue.split(',');
+                var newTitle;
+                var diffValue;
+                var newDiff;
+
+                for (const value of values) {
+                    if (value.startsWith('d:')) {
+                        diffValue = value.substring(2);
+                    } else if (value.startsWith('t:')) {
+                        newTitle = value.substring(2);
+                    }
+                }
+
+                console.log(diffValue);
+
+                for (var i = 0; i < diffValue; i++) {
+                    newDiff += "★";
+                }
+
+                var taskListId = "#" + type + "-list";
+                var newTask = document.createElement('li');
+
+                newTask.innerHTML = `<button type="button">0</button><span class="task-title">` + newTitle + `</span><span class="difficulty flex-right">` + newDiff + `</span>`;
+
+                var taskList = document.querySelector(taskListId);
+
+                taskList.append(newTask);
+
+                title.value = "";
+                diff.value = "";
+                btn.value = "";
+            });
 
 
-        }
+            dialog.showModal();
 
-        const doOnClick = (e) => {
-            console.log('eh')
+
+
         }
 
 
         window.onload = (event) => {
+
+            var addButtons = document.querySelectorAll('.add-task-button');
+
+
             var addButtons = document.querySelectorAll('.add-task-button');
 
 
@@ -38,6 +82,7 @@
             addButtons.forEach((button) => {
                 button.addEventListener('click', function (event) {
                     addTask(this.id);
+
                 })
             });
         }
@@ -80,29 +125,44 @@
         </nav>
     </header>
     <main>
+        <dialog>
+            <p>Add a task</p>
+            <form>
+                <label>Title: <input type="text" id="title-input" placeholder="New task" /></label>
+                <fieldset>
+                    <legend>Difficulty</legend>
+
+                    <div class="flex-row">
+                        <label for="easy">Easy
+                            <input type="radio" id="easy" name="difficulty" value="1" />
+                        </label>
+                        <label for="medium">Medium
+                            <input type="radio" id="medium" name="difficulty" value="2" />
+                        </label>
+                        <label for="hard">Hard
+                            <input type="radio" id="hard" name="difficulty" value="3" />
+                        </label>
+                    </div>
+                </fieldset>
+                <button type="submit">Add task</button>
+            </form>
+        </dialog>
         <div id="list-1" class="task-list">
             <div class="task-list-header flex-center">
                 <h2>Pertinents</h2>
                 <button id="pertinent" class="add-task-button" type="button">+</button>
             </div>
-            <ul id="first-list">
-                <li><button onclick="increment(this)">2</button><span class="task-title">task 1</span><span class="difficulty">★</span></li>
-                <li><button onclick="increment(this)">0</button><span class="task-title">task 2</span><span class="difficulty flex-right">★★★</span></li>
+            <ul id="pertinent-list">
+                <li><button type="button">2</button><span class="task-title">task 1</span><span class="difficulty">★</span></li>
+                <li><button type="button">0</button><span class="task-title">task 2</span><span class="difficulty flex-right">★★★</span></li>
             </ul>
-            <dialog>
-                <p>Add a task</p>
-                <form>
-                    <label>Title: <input type="text" placeholder="New task" /></label>
-                    <button type="submit">Add task</button>
-                </form>
-            </dialog>
         </div>
         <div id="list-2" class="task-list">
             <div class="task-list-header flex-center">
                 <h2>Predictables</h2>
                 <button id="predictable" class="add-task-button" type="button">+</button>
             </div>
-            <ul>
+            <ul id="predictable-list">
                 <li>task</li>
                 <li>task</li>
             </ul>
@@ -112,7 +172,7 @@
                 <h2>To Do</h2>
                 <button id="todo" class="add-task-button" type="button">+</button>
             </div>
-            <ul>
+            <ul id="todo-list">
                 <li>task</li>
                 <li>task</li>
             </ul>
@@ -122,7 +182,7 @@
                 <h2>Don't Forget</h2>
                 <button id="forget" class="add-task-button" type="button">+</button>
             </div>
-            <ul>
+            <ul id="forget-list">
                 <li>task</li>
                 <li>task</li>
             </ul>

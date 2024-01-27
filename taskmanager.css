@@ -161,6 +161,14 @@ justify-self: end;
     cursor: pointer;
 }
 
+/****** Dialog Styles ******/
+
+dialog {
+    padding: 1em;
+    margin: auto;
+}
+
+
 /****** Grid Styles ******/
 
 body {
