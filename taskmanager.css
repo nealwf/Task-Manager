@@ -200,6 +200,21 @@ dialog {
   min-width: 20%;
 }
 
+/****** Project styles ******/
+
+.project-rewards {
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+
+.project-rewards li {
+  border-radius: 20px;
+  border: 1px solid rebeccapurple;
+  width: 6em;
+  height: 6em;
+  margin: 1em;
+}
+
 /****** Grid Styles ******/
 
 body {
@@ -230,25 +245,28 @@ body {
 
   display: grid;
   grid-template-columns: [list1-start] 1fr [list1-end] 1em [list2-start] 1fr [list2-end] 1em [list3-start] 1fr [list3-end] 2em;
-  grid-template-rows: [upper-start] 2em [upper-end] 1fr [lower-start] 1em [lower-end] 0.5fr [lists-end] 2em;
+  grid-template-rows: [upper-start] 2em [upper-end] 0.5fr [lower-start] 1em [lower-end] 1fr [lists-end] 2em;
   grid-template-areas:
     ". . . . . ."
-    ". boss1 . boss2 . boss3 ."
+    "rewards1 . rewards2 . rewards3 ."
     ". . . . . ."
-    ". project1 . project2 . project3 ."
+    "project1 . project2 . project3 ."
     ". . . . . .";
 }
 
-#boss-1 {
-  grid-area: boss1;
+#project-1-rewards {
+  grid-area: rewards1;
+  justify-self: center;
 }
 
-#boss-2 {
-  grid-area: boss2;
+#project-2-rewards {
+  grid-area: rewards2;
+justify-self: center;
 }
 
-#boss-3 {
-  grid-area: boss3;
+#project-3-rewards {
+  grid-area: rewards3;
+justify-self: center;
 }
 
 #project-1 {
