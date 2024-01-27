@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="taskmanager.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+    </script>
+
+    <title>Projects | Task Manager</title>
+</head>
+
+<body>
+    <header>
+        <img src="placeholder.png" id="avatar" />
+        <div id="stats">
+            <p id="level">Level 2</p><progress id="xp-bar" max="100" value="20"></progress>
+            <div id="clips"><img alt="clips" src="clip.png" id="clip-icon" />
+                <p>100</p>
+            </div>
+            <div id="gears"><img alt="gears" src="gear.png" id="gear-icon" />
+                <p>20</p>
+            </div>
+            <div id="tokens"><img alt="tokens" src="clip.png" id="token-icon" />
+                <p>5</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="tasks.html">Tasks</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="wardrobe.html">Wardrobe</a></li>
+                <li><a href="shops.html">Shops</a></li>
+                <li><a href="stats.html">Stats</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="projects-main">
+<img src="cube.png" id="boss-1" />
+        <div id="project-1" class="task-list">
+            <div class="task-list-header flex-center">
+                <h2>Project 1</h2>
+                <button id="pertinent" class="add-task-button" type="button">+</button>
+            </div>
+            <ul id="pertinent-list">
+                <li><button type="button">2</button><span class="task-title">task 1</span><span class="difficulty">★</span></li>
+                <li><button type="button">0</button><span class="task-title">task 2</span><span class="difficulty flex-right">★★★</span></li>
+            </ul>
+        </div>
+<img src="cube.png" id="boss-2" />
+        <div id="project-2" class="task-list">
+            <div class="task-list-header flex-center">
+                <h2>Project 2</h2>
+                <button id="predictable" class="add-task-button" type="button">+</button>
+            </div>
+            <ul id="predictable-list">
+                <li>task</li>
+                <li>task</li>
+            </ul>
+        </div>
+        <img src="cube.png" id="boss-3" />
+        <div id="project-3" class="task-list">
+            <div class="task-list-header flex-center">
+                <h2>Project 3</h2>
+                <button id="todo" class="add-task-button" type="button">+</button>
+            </div>
+            <ul id="todo-list">
+                <li>task</li>
+                <li>task</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>A project by Neal Whitefur &bull; [license] &bull; Help</p>
+        <p id="info"></p>
+    </footer>
+</body>
+
+
+</html>

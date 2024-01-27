@@ -211,7 +211,7 @@ body {
     "footer . main";
 }
 
-main {
+#tasks-main {
   grid-area: main;
 
   display: grid;
@@ -223,6 +223,44 @@ main {
     ". . . . . ."
     "list4 list4 list4 list4 list4 ."
     ". . . . . .";
+}
+
+#projects-main {
+  grid-area: main;
+
+  display: grid;
+  grid-template-columns: [list1-start] 1fr [list1-end] 1em [list2-start] 1fr [list2-end] 1em [list3-start] 1fr [list3-end] 2em;
+  grid-template-rows: [upper-start] 2em [upper-end] 1fr [lower-start] 1em [lower-end] 0.5fr [lists-end] 2em;
+  grid-template-areas:
+    ". . . . . ."
+    ". boss1 . boss2 . boss3 ."
+    ". . . . . ."
+    ". project1 . project2 . project3 ."
+    ". . . . . .";
+}
+
+#boss-1 {
+  grid-area: boss1;
+}
+
+#boss-2 {
+  grid-area: boss2;
+}
+
+#boss-3 {
+  grid-area: boss3;
+}
+
+#project-1 {
+  grid-area: project1;
+}
+
+#project-2 {
+  grid-area: project2;
+}
+
+#project-3 {
+  grid-area: project3;
 }
 
 header {
