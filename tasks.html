@@ -55,7 +55,7 @@
                 newTask.innerHTML = `<button type="button">0</button><span class="task-title">` + newTitle + `</span><span class="difficulty flex-right">` + newDiff + `</span>`;
 
             } else {
-                newTask.innerHTML = `<div class="checkbox"><label for="checkbox">Done</label><input type="checkbox" id="checkbox" name="checkbox" /></div>` + newTitle + `</span><span class="difficulty flex-right">` + newDiff + `</span>`;
+                newTask.innerHTML = `<div class="checkbox"><label for="checkbox">Mark as done</label><input type="checkbox" id="checkbox" name="checkbox" /></div>` + newTitle + `</span><span class="difficulty flex-right">` + newDiff + `</span>`;
             }
 
             var taskList = document.querySelector(taskListId);
