@@ -63,6 +63,11 @@
 
             taskList.append(newTask);
 
+            var key = type + "-1";
+            var value = "false" + "||" + newTitle + "||" + diffValue;
+            localStorage.setItem(key, value);
+            console.log(localStorage.getItem(key));
+
             //title.value = "";
             //diff.value = "";
             //btn.value = "";
@@ -76,6 +81,8 @@
 
 
         window.onload = (event) => {
+
+
 
             var addButtons = document.querySelectorAll('.add-task-button');
 
