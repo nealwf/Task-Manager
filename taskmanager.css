@@ -5,356 +5,386 @@ TODO:
 */
 
 * {
-  margin: 0;
-  padding: 0;
-  font-family: "Courier New", Courier, monospace;
+	margin: 0;
+	padding: 0;
+	font-family: "Courier New", Courier, monospace;
 }
 
 p,
 ul {
-  font-size: 18px;
+	font-size: 18px;
 }
 
 html {
-  height: 100%;
+	height: 100%;
 }
 
 body {
-  min-height: 100%;
+	min-height: 100%;
 }
 
 /****** Header and footer styles ******/
 
 header,
 footer {
-  background-color: rebeccapurple;
-  color: white;
-  text-align: center;
+	background-color: rebeccapurple;
+	color: white;
+	text-align: center;
 }
 
 footer {
-  padding: 1em;
+	padding: 1em;
 }
 
 /****** Money & XP styles ******/
 
 #xp-bar {
-  height: 1em;
-  border-radius: 20px;
+	height: 1em;
+	border-radius: 20px;
 
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 #stats div img {
-  max-height: 30px;
+	max-height: 30px;
 }
 
 #clips {
 }
 
 #stats div {
-  background-color: white;
-  border-radius: 15px;
-  color: black;
+	background-color: white;
+	border-radius: 15px;
+	color: black;
 }
 
 /****** Nav Styles ******/
 
 nav {
-  width: 100%;
-  align-self: end;
+	width: 100%;
+	align-self: end;
 }
 
 nav ul {
-  width: 100%;
-  list-style-type: none;
+	width: 100%;
+	list-style-type: none;
 }
 
 nav ul li {
-  width: 100%;
-  margin: 0.5em auto 0;
+	width: 100%;
+	margin: 0.5em auto 0;
 }
 
 nav ul li a {
-  width: calc(100% - 1.2em - 2px);
-  padding: 0.6em;
-  background-color: aquamarine;
-  border: 1px solid darkcyan;
-  text-align: center;
-  border-radius: 50px;
-  display: block;
-  font-size: 22px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #663399;
+	width: calc(100% - 1.2em - 2px);
+	padding: 0.6em;
+	background-color: aquamarine;
+	border: 1px solid darkcyan;
+	text-align: center;
+	border-radius: 50px;
+	display: block;
+	font-size: 22px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #663399;
 }
 
 nav ul li a:hover {
-  background-color: darkcyan;
-  color: white;
+	background-color: darkcyan;
+	color: white;
 }
 
 /****** List styles ******/
 .task-list-header {
-  background-color: rgb(149, 225, 200);
-  border-radius: 20px 20px 0 0;
-  padding: 0.5em 0;
-  border-bottom: 1px solid black;
+	background-color: rgb(149, 225, 200);
+	border-radius: 20px 20px 0 0;
+	padding: 0.5em 0;
+	border-bottom: 1px solid black;
 }
 
 .task-list h2 {
-  text-align: center;
-  margin: 0;
+	text-align: center;
+	margin: 0;
 }
 
 .task-list {
-  border: 1px solid black;
-  border-radius: 20px;
+	border: 1px solid black;
+	border-radius: 20px;
 }
 
 .task-list ul {
-  list-style-type: none;
-  padding: 0 0.5em;
+	list-style-type: none;
+	padding: 0 0.5em;
 }
 
 .task-list ul li {
-  border-radius: 10px;
-  text-align: center;
-  padding: 0.5em 1em;
-  border: 2px solid black;
+	border-radius: 10px;
+	text-align: center;
+	padding: 0.5em 1em;
+	border: 2px solid black;
 
-  display: grid;
-  grid-template-columns: 2em 1fr 50px;
-  grid-template-rows: 1fr;
-  grid-template-areas: "check title difficulty";
+	display: grid;
+	grid-template-columns: 2em 1fr 50px;
+	grid-template-rows: 1fr;
+	grid-template-areas: "check title difficulty";
 }
 
 .task-title {
-  grid-area: title;
-  align-self: center;
-  justify-self: center;
-  width: 100%;
+	grid-area: title;
+	align-self: center;
+	justify-self: center;
+	width: 100%;
 }
 
 .task-list ul li button,
 .checkbox {
-  grid-area: check;
+	grid-area: check;
 }
 
 .checkbox label {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }
 
 input[type="radio"] {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }
 
 input[type="radio"] + label {
-  padding: 0.5em;
-  border: 3px outset black;
+	padding: 0.5em;
+	border: 3px outset black;
 }
 
 input[type="radio"]:checked + label {
-  border: 3px inset black;
+	border: 3px inset black;
 }
 
 .difficulty {
-  grid-area: difficulty;
-  justify-self: end;
+	grid-area: difficulty;
+	justify-self: end;
 }
 
 .add-task-button {
-  margin-left: 0.75em;
-  border-radius: 25px;
-  border: 2px solid black;
+	margin-left: 0.75em;
+	border-radius: 25px;
+	border: 2px solid black;
 }
 
 .add-task-button:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 /****** Dialog Styles ******/
 
 dialog {
-  padding: 1em;
-  margin: auto;
-  min-height: 20%;
-  min-width: 20%;
+	padding: 1em;
+	margin: auto;
+	min-height: 20%;
+	min-width: 20%;
+}
+
+dialog form {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 0.2fr 1em 0.2fr 1em 0.4fr 1em 0.2fr;
+	grid-template-areas:
+		". heading ."
+		". . ."
+		"title title title"
+		". . ."
+		"diff diff diff"
+		". . ."
+		". button .";
+}
+
+dialog form h2 {
+	grid-area: heading;
+}
+
+#title-label {
+	grid-area: title;
+}
+
+dialog form fieldset {
+	grid-area: diff;
+}
+
+dialog form button {
+	grid-area: button;
 }
 
 /****** Project styles ******/
 
 .project-rewards {
-  list-style-type: none;
-  flex-wrap: wrap;
+	list-style-type: none;
+	flex-wrap: wrap;
 }
 
 .project-rewards li {
-  border-radius: 20px;
-  border: 1px solid rebeccapurple;
-  width: 6em;
-  height: 6em;
-  margin: 1em;
+	border-radius: 20px;
+	border: 1px solid rebeccapurple;
+	width: 6em;
+	height: 6em;
+	margin: 1em;
 }
 
 /****** Grid Styles ******/
 
 body {
-  display: grid;
-  grid-template-columns: [header-right] 0.3fr [main-left] 2em [main] 1fr;
-  grid-template-rows: [row-1] auto [row-2] 100px;
-  grid-template-areas:
-    "header . main"
-    "footer . main";
+	display: grid;
+	grid-template-columns: [header-right] 0.3fr [main-left] 2em [main] 1fr;
+	grid-template-rows: [row-1] auto [row-2] 100px;
+	grid-template-areas:
+		"header . main"
+		"footer . main";
 }
 
 #tasks-main {
-  grid-area: main;
+	grid-area: main;
 
-  display: grid;
-  grid-template-columns: [list1-start] 1fr [list1-end] 1em [list2-start] 1fr [list2-end] 1em [list3-start] 1fr [list3-end] 2em;
-  grid-template-rows: [upper-start] 2em [upper-end] 1fr [lower-start] 1em [lower-end] 0.5fr [lists-end] 2em;
-  grid-template-areas:
-    ". . . . . ."
-    "list1 . list2 . list3 ."
-    ". . . . . ."
-    "list4 list4 list4 list4 list4 ."
-    ". . . . . .";
+	display: grid;
+	grid-template-columns: [list1-start] 1fr [list1-end] 1em [list2-start] 1fr [list2-end] 1em [list3-start] 1fr [list3-end] 2em;
+	grid-template-rows: [upper-start] 2em [upper-end] 1fr [lower-start] 1em [lower-end] 0.5fr [lists-end] 2em;
+	grid-template-areas:
+		". . . . . ."
+		"list1 . list2 . list3 ."
+		". . . . . ."
+		"list4 list4 list4 list4 list4 ."
+		". . . . . .";
 }
 
 #projects-main {
-  grid-area: main;
+	grid-area: main;
 
-  display: grid;
-  grid-template-columns: [list1-start] 1fr [list1-end] 1em [list2-start] 1fr [list2-end] 1em [list3-start] 1fr [list3-end] 2em;
-  grid-template-rows: [upper-start] 2em [upper-end] 0.5fr [lower-start] 1em [lower-end] 1fr [lists-end] 2em;
-  grid-template-areas:
-    ". . . . . ."
-    "rewards1 . rewards2 . rewards3 ."
-    ". . . . . ."
-    "project1 . project2 . project3 ."
-    ". . . . . .";
+	display: grid;
+	grid-template-columns: [list1-start] 1fr [list1-end] 1em [list2-start] 1fr [list2-end] 1em [list3-start] 1fr [list3-end] 2em;
+	grid-template-rows: [upper-start] 2em [upper-end] 0.5fr [lower-start] 1em [lower-end] 1fr [lists-end] 2em;
+	grid-template-areas:
+		". . . . . ."
+		"rewards1 . rewards2 . rewards3 ."
+		". . . . . ."
+		"project1 . project2 . project3 ."
+		". . . . . .";
 }
 
 #project-1-rewards {
-  grid-area: rewards1;
-  justify-self: center;
+	grid-area: rewards1;
+	justify-self: center;
 }
 
 #project-2-rewards {
-  grid-area: rewards2;
-justify-self: center;
+	grid-area: rewards2;
+	justify-self: center;
 }
 
 #project-3-rewards {
-  grid-area: rewards3;
-justify-self: center;
+	grid-area: rewards3;
+	justify-self: center;
 }
 
 #project-1 {
-  grid-area: project1;
+	grid-area: project1;
 }
 
 #project-2 {
-  grid-area: project2;
+	grid-area: project2;
 }
 
 #project-3 {
-  grid-area: project3;
+	grid-area: project3;
 }
 
 header {
-  grid-area: header;
+	grid-area: header;
 
-  display: grid;
-  grid-template-columns: [header-left] 1em [header-main] 1fr [header-right] 1em;
-  grid-template-rows: [row-1] 405px [row-2] 100px [row-3] auto [row-4] auto;
-  grid-template-areas:
-    ". avatar ."
-    ". stats. "
-    ". . ."
-    ". nav .";
+	display: grid;
+	grid-template-columns: [header-left] 1em [header-main] 1fr [header-right] 1em;
+	grid-template-rows: [row-1] 405px [row-2] 100px [row-3] auto [row-4] auto;
+	grid-template-areas:
+		". avatar ."
+		". stats. "
+		". . ."
+		". nav .";
 }
 
 #stats {
-  grid-area: stats;
+	grid-area: stats;
 
-  display: grid;
-  grid-template-columns: 2em 1fr 1em 1fr 1em 1fr 2em;
-  grid-template-rows: 0.5fr 1fr;
-  grid-template-areas:
-    ". level  xp xp xp xp . "
-    ". clips . gears . tokens .";
+	display: grid;
+	grid-template-columns: 2em 1fr 1em 1fr 1em 1fr 2em;
+	grid-template-rows: 0.5fr 1fr;
+	grid-template-areas:
+		". level  xp xp xp xp . "
+		". clips . gears . tokens .";
 }
 
 #xp-bar {
-  grid-area: xp;
+	grid-area: xp;
 }
 
 #clips {
-  grid-area: clips;
-  align-self: center;
+	grid-area: clips;
+	align-self: center;
 }
 
 #gears {
-  grid-area: gears;
-  align-self: center;
+	grid-area: gears;
+	align-self: center;
 }
 
 #tokens {
-  grid-area: tokens;
-  align-self: center;
+	grid-area: tokens;
+	align-self: center;
 }
 
 #level {
-  grid-area: level;
+	grid-area: level;
 }
 
 #avatar {
-  grid-area: avatar;
-  max-height: 400px; /* TODO: adjust later */
+	grid-area: avatar;
+	max-height: 400px; /* TODO: adjust later */
 }
 
 nav {
-  grid-area: nav;
+	grid-area: nav;
 }
 
 footer {
-  grid-area: footer;
+	grid-area: footer;
 }
 
 #list-1 {
-  grid-area: list1;
+	grid-area: list1;
 }
 
 #list-2 {
-  grid-area: list2;
+	grid-area: list2;
 }
 
 #list-3 {
-  grid-area: list3;
+	grid-area: list3;
 }
 
 #list-4 {
-  grid-area: list4;
+	grid-area: list4;
 }
 
 /****** Flex Classes ******/
@@ -363,195 +393,195 @@ footer {
 /* for other values see https://ptb2.me/flexbox/ */
 
 .flex-row {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -ms-flex-pack: space-between;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-pack: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	-ms-flex-pack: space-between;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
 }
 
 .flex-right {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: flex-end;
-  justify-content: flex-end;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-pack: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	-ms-flex-pack: flex-end;
+	justify-content: flex-end;
 }
 
 .flex-left {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -ms-flex-pack: flex-start;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-pack: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	-ms-flex-pack: flex-start;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
 }
 
 .flex-space {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: space-around;
-  justify-content: space-around;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-pack: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: space-around;
+	justify-content: space-around;
 }
 
 .flex-center {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-pack: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 }
 
 .flex-center-column {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -ms-flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-ms-flex-pack: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	-ms-flex-pack: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
 }
 
 .flex-bottom {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-pack: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  -webkit-align-items: flex-end;
-  align-items: flex-end;
-  -ms-flex-pack: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-pack: flex-end;
+	-webkit-box-align: flex-end;
+	-ms-flex-align: flex-end;
+	-webkit-align-items: flex-end;
+	align-items: flex-end;
+	-ms-flex-pack: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
 }
 
 .flex-left-column {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -ms-flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-pack: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  -webkit-align-items: flex-start;
-  align-items: center;
-  -ms-flex-pack: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-ms-flex-pack: flex-start;
+	-webkit-box-align: flex-start;
+	-ms-flex-align: flex-start;
+	-webkit-align-items: flex-start;
+	align-items: center;
+	-ms-flex-pack: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
 }
 
 .flex-top {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-pack: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
-  -ms-flex-pack: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-pack: flex-start;
+	-webkit-box-align: flex-start;
+	-ms-flex-align: flex-start;
+	-webkit-align-items: flex-start;
+	align-items: flex-start;
+	-ms-flex-pack: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
 }

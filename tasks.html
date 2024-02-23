@@ -155,24 +155,25 @@
     </header>
     <main id="tasks-main">
         <dialog>
-            <p>Add a task</p>
+
             <form>
-                <label>Title: <input type="text" id="title-input" placeholder="New task" required /></label>
+                <h2>Add a task</h2>
+                <label id="title-label">Title: <input type="text" id="title-input" placeholder="New task" required /></label>
                 <fieldset>
                     <legend>Difficulty</legend>
 
                     <div class="flex-row">
-                        
+
                         <input type="radio" id="easy" name="difficulty" value="1" checked required />
-<label for="easy">Easy ★</label>
+                        <label for="easy">Easy ★</label>
 
-                        
+
                         <input type="radio" id="medium" name="difficulty" value="2" />
-<label for="medium">Medium ★★</label>
+                        <label for="medium">Medium ★★</label>
 
-                        
+
                         <input type="radio" id="hard" name="difficulty" value="3" />
-<label for="hard">Hard ★★★</label>
+                        <label for="hard">Hard ★★★</label>
 
                     </div>
                 </fieldset>
