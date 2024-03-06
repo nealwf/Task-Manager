@@ -35,7 +35,7 @@
             //var values = dialog.returnValue.split(';;;');
             var newTitle = title.value;
             var diffValue = document.querySelector('input[name="difficulty"]:checked').value;
-            var newDiff = "";
+            var newDiff = "★";
 
             /*  for (const value of values) {
                   if (value.startsWith('d:')) {
@@ -45,9 +45,12 @@
                   }
               } */
 
-            for (var i = 0; i < diffValue; i++) {
-                newDiff += "★";
-            }
+            /* for (var i = 0; i < diffValue; i++) {
+                 newDiff += "★";
+             } */
+
+            newDiff = newDiff.repeat(diffValue);
+            var diffClass = "difficulty-" + diffValue;
 
             var taskListId = "#" + type + "-list";
             var newTask = document.createElement('li');
@@ -57,7 +60,7 @@
                 newTask.innerHTML = `<button type="button">0</button><span class="task-title">` + newTitle + `</span><span class="difficulty flex-right">` + newDiff + `</span>`;
 
             } else {
-                newTask.innerHTML = `<div class="checkbox"><label for="checkbox">Mark as done</label><input type="checkbox" id="checkbox" name="checkbox" /></div>` + newTitle + `</span><span class="difficulty flex-right">` + newDiff + `</span>`;
+                newTask.innerHTML = `<label class="checkbox"><span>Mark as done</span><input type="checkbox" name="checkbox" /></label><span>` + newTitle + `</span><span class="difficulty flex-right` + diffValue + `">` + newDiff + `</span>`;
             }
 
             var taskList = document.querySelector(taskListId);
@@ -82,8 +85,11 @@
 
 
         window.onload = (event) => {
+            var xpEasy = 5;
+            var xpMedium = 10;
+            var xpHard = 15;
 
-
+            const xpBar = document.querySelector('#xp-bar');
 
             var addButtons = document.querySelectorAll('.add-task-button');
 
@@ -113,6 +119,26 @@
             });
 
             //dialog.showModal();
+
+            var doneMarkers = document.querySelectorAll('.checkbox input');
+
+            doneMarkers.forEach((marker) => {
+                marker.addEventListener('change', function (event) {
+                    if (this.checked) {
+
+                        var diff = this.parentNode.parentNode.querySelector('.difficulty').classList;
+
+                        if (diff.contains("difficulty-1")) { xpBar.value += xpEasy; }
+                        else if (diff.contains("difficulty-2")) { xpBar.value += xpMedium; }
+                        else if (diff.contains("difficulty-3")) { xpBar.value += xpHard; }
+
+                        console.log(xpBar.value);
+                        //console.log(diff.match(/★/));
+                    }
+
+                })
+            });
+
         }
 
         function increment(element) {
@@ -186,8 +212,8 @@
                 <button id="pertinent" class="add-task-button" type="button">+</button>
             </div>
             <ul id="pertinent-list">
-                <li><button type="button">2</button><span class="task-title">task 1</span><span class="difficulty">★</span></li>
-                <li><button type="button">0</button><span class="task-title">task 2</span><span class="difficulty flex-right">★★★</span></li>
+                <li><button type="button">2</button><span class="task-title">task 1</span><span class="difficulty difficulty-1">★</span></li>
+                <li><button type="button">0</button><span class="task-title">task 2</span><span class="difficulty flex-right difficulty-3">★★★</span></li>
             </ul>
         </div>
         <div id="list-2" class="task-list">
@@ -196,8 +222,8 @@
                 <button id="predictable" class="add-task-button" type="button">+</button>
             </div>
             <ul id="predictable-list">
-                <li><div class="checkbox"><label for="checkbox">Mark as done</label><input type="checkbox" id="checkbox" name="checkbox" /></div>task</span><span class="difficulty flex-right">★★</span></li>
-                <li><div class="checkbox"><label for="checkbox">Mark as done</label><input type="checkbox" id="checkbox" name="checkbox" /></div>task</span><span class="difficulty flex-right">★★</span></li>
+                <li><label class="checkbox"><span>Mark as done</span><input type="checkbox" name="checkbox" /></label><span>task</span><span class="difficulty flex-right difficulty-2">★★</span></li>
+                <li><label class="checkbox"><span>Mark as done</span><input type="checkbox" name="checkbox" /></label><span>task</span><span class="difficulty flex-right difficulty-2">★★</span></li>
             </ul>
         </div>
         <div id="list-3" class="task-list">
@@ -206,8 +232,8 @@
                 <button id="todo" class="add-task-button" type="button">+</button>
             </div>
             <ul id="todo-list">
-                <li><div class="checkbox"><label for="checkbox">Mark as done</label><input type="checkbox" id="checkbox" name="checkbox" /></div>task</span><span class="difficulty flex-right">★★</span></li>
-                <li><div class="checkbox"><label for="checkbox">Mark as done</label><input type="checkbox" id="checkbox" name="checkbox" /></div>task</span><span class="difficulty flex-right">★</span></li>
+                <li><label class="checkbox"><span>Mark as done</span><input type="checkbox" name="checkbox" /></label><span>task</span><span class="difficulty flex-right difficulty-2">★★</span></li>
+                <li><label class="checkbox"><span>Mark as done</span><input type="checkbox" name="checkbox" /></label><span>task</span><span class="difficulty flex-right difficulty-2">★★</span></li>
             </ul>
         </div>
         <div id="list-4" class="task-list">
@@ -216,8 +242,12 @@
                 <button id="forget" class="add-task-button" type="button">+</button>
             </div>
             <ul id="forget-list">
-                <li><div class="checkbox"><label for="checkbox">Mark as done</label><input type="checkbox" id="checkbox" name="checkbox" /></div>task</span><span class="difficulty flex-right">★</span></li>
-                <li><div class="checkbox"><label for="checkbox">Mark as done</label><input type="checkbox" id="checkbox" name="checkbox" /></div>task</span><span class="difficulty flex-right">★★</span></li>
+                <li>
+                    <div class="checkbox"><label for="checkbox"><span>Mark as done</span></label><input type="checkbox" id="checkbox" name="checkbox" /></div>task</span><span class="difficulty flex-right difficulty-1">★</span>
+                </li>
+                <li>
+                    <div class="checkbox"><label for="checkbox"><span>Mark as done</span></label><input type="checkbox" id="checkbox" name="checkbox" /></div>task</span><span class="difficulty flex-right difficulty-2">★★</span>
+                </li>
             </ul>
         </div>
     </main>
