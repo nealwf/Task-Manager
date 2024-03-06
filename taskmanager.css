@@ -176,6 +176,11 @@ input[type="radio"]:checked + label {
 	border: 3px inset black;
 }
 
+input[type="checkbox"] {
+	width: 23px;
+	height: 23px;
+}
+
 .difficulty {
 	grid-area: difficulty;
 	justify-self: end;
